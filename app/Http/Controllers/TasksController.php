@@ -104,7 +104,7 @@ class TasksController extends Controller
     public function edit($id)
     {
         
-        if (!\Auth::check()) {
+        if (\Auth::check()) {
             $task = Task::find($id);
             if ((\Auth::user()->id) != $task->user_id){
                 return redirect('/');
